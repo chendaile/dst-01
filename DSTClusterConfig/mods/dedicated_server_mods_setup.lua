@@ -9,3 +9,20 @@
 	--The Workshop id can be found at the end of the url to the collection's Workshop page.
 	--Example: http://steamcommunity.com/sharedfiles/filedetails/?id=379114180
 	--ServerModCollectionSetup("379114180")
+	
+
+-- Global Positions
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=378160973
+ServerModSetup("378160973")
+
+-- Extra Equip Slots
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=375850593
+ServerModSetup("375850593")
+
+-- Health Info
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=375859599
+ServerModSetup("375859599")
+
+-- Food Values - Item Tooltips (Server and Client)
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=458940297
+ServerModSetup("458940297")

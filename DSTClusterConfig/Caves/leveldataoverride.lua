@@ -10,6 +10,8 @@ return {
   numrandom_set_pieces=0,
   override_level_string=false,
   overrides={
+    healthpenalty="none",
+
     atriumgate="default",
     banana="default",
     bats="default",

@@ -1,12 +1,12 @@
 version: '3'
 services:
   dst_caves:
-    container_name: dst_caves
+    container_name: dst_caves_01
     image: mathielo/dst-dedicated-server:0.3.1
     ports:
-      - 10998:10998/udp
+      - 11998:11998/udp
     networks:
-      - dst_cluster
+      - dst_cluster_01
     links:
       - dst_master
     volumes:
@@ -16,12 +16,12 @@ services:
       - SHARD_NAME=Caves
 
   dst_master:
-    container_name: dst_master
+    container_name: dst_master_01
     image: mathielo/dst-dedicated-server:0.3.1
     networks:
-      - dst_cluster
+      - dst_cluster_01
     ports:
-      - 10999:10999/udp
+      - 11999:11999/udp
     volumes:
       - ./DSTClusterConfig:/home/dst/.klei/DoNotStarveTogether/DSTWhalesCluster
       - ./volumes/mods:/home/dst/server_dst/mods
@@ -34,5 +34,5 @@ services:
     tty: true
 
 networks:
-  dst_cluster:
+  dst_cluster_01:
 
