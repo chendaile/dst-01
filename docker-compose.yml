@@ -12,6 +12,9 @@ services:
       - dst_master
     volumes:
       - ./DSTClusterConfig:/home/dst/.klei/DoNotStarveTogether/DSTWhalesCluster
+      # Persist the game install on the host so the on-boot steamcmd update sticks
+      # (otherwise the binary stays frozen at the version baked into the image).
+      - ./volumes/server_dst:/home/dst/server_dst
       - ./volumes/mods:/home/dst/server_dst/mods
     environment:
       - SHARD_NAME=Caves
@@ -31,6 +34,9 @@ services:
       # - "12346:12346/udp"
     volumes:
       - ./DSTClusterConfig:/home/dst/.klei/DoNotStarveTogether/DSTWhalesCluster
+      # Persist the game install on the host so the on-boot steamcmd update sticks
+      # (otherwise the binary stays frozen at the version baked into the image).
+      - ./volumes/server_dst:/home/dst/server_dst
       - ./volumes/mods:/home/dst/server_dst/mods
     environment:
       - SHARD_NAME=Master
