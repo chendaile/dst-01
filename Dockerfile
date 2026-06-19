@@ -7,7 +7,7 @@ LABEL \
     source="https://github.com/mathielo/dst-dedicated-server"
 
 # Create specific user to run DST server
-RUN useradd -ms /bin/bash/ dst
+RUN useradd -ms /bin/bash dst
 WORKDIR /home/dst
 
 # Install required packages

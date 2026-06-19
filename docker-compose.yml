@@ -4,7 +4,8 @@ services:
     container_name: dst_caves_01
     image: mathielo/dst-dedicated-server:0.3.1
     ports:
-      - 11998:11998/udp
+      - "11998:11998/udp"
+      # - "12346:12347/udp"
     networks:
       - dst_cluster_01
     links:
@@ -14,6 +15,11 @@ services:
       - ./volumes/mods:/home/dst/server_dst/mods
     environment:
       - SHARD_NAME=Caves
+      - HTTP_PROXY=http://172.17.0.1:7890
+      - HTTPS_PROXY=http://172.17.0.1:7890
+      - NO_PROXY=localhost,127.0.0.1
+    depends_on: 
+    - dst_master
 
   dst_master:
     container_name: dst_master_01
@@ -21,12 +27,16 @@ services:
     networks:
       - dst_cluster_01
     ports:
-      - 11999:11999/udp
+      - "11999:11999/udp"
+      # - "12346:12346/udp"
     volumes:
       - ./DSTClusterConfig:/home/dst/.klei/DoNotStarveTogether/DSTWhalesCluster
       - ./volumes/mods:/home/dst/server_dst/mods
     environment:
       - SHARD_NAME=Master
+      - HTTP_PROXY=http://172.17.0.1:7890
+      - HTTPS_PROXY=http://172.17.0.1:7890
+      - NO_PROXY=localhost,127.0.0.1
 
     # These allow to stdin when attaching to the container via `docker attach`
     # Any server commands should be sent to the master shard as it manages its slaves (Caves)
