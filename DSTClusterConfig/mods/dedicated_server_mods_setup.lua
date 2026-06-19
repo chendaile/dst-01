@@ -11,18 +11,20 @@
 	--ServerModCollectionSetup("379114180")
 	
 
--- Global Positions
--- https://steamcommunity.com/sharedfiles/filedetails/?id=378160973
-ServerModSetup("378160973")
+-- Auto-download is DISABLED on purpose.
+-- The in-game Workshop downloader kept timing out on some of these mods (EResult 16),
+-- so they are provided as LOCAL mods in server_dst/mods/workshop-<id>/ (./volumes/mods on
+-- the host), fetched deterministically with steamcmd, and enabled via modoverrides.lua.
+-- Re-enable a line below only if you want the server to auto-download that mod again.
 
--- Extra Equip Slots
--- https://steamcommunity.com/sharedfiles/filedetails/?id=375850593
-ServerModSetup("375850593")
+-- Global Positions    https://steamcommunity.com/sharedfiles/filedetails/?id=378160973
+-- ServerModSetup("378160973")
 
--- Health Info
--- https://steamcommunity.com/sharedfiles/filedetails/?id=375859599
-ServerModSetup("375859599")
+-- Extra Equip Slots   https://steamcommunity.com/sharedfiles/filedetails/?id=375850593
+-- ServerModSetup("375850593")
 
--- Food Values - Item Tooltips (Server and Client)
--- https://steamcommunity.com/sharedfiles/filedetails/?id=458940297
-ServerModSetup("458940297")
+-- Health Info         https://steamcommunity.com/sharedfiles/filedetails/?id=375859599
+-- ServerModSetup("375859599")
+
+-- Food Values         https://steamcommunity.com/sharedfiles/filedetails/?id=458940297
+-- ServerModSetup("458940297")
