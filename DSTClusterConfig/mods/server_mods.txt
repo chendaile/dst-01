@@ -1,0 +1,13 @@
+# Server mods to install — ONE Steam Workshop id per line.
+#
+# On boot, start-container-server.sh downloads each id here with steamcmd and installs it as a
+# LOCAL mod (server_dst/mods/workshop-<id>/). This replaces the in-game Workshop auto-download,
+# whose short engine timeout kept failing on this network.
+#
+# To add a mod:   1) add its id here   2) enable "workshop-<id>" in modoverrides.lua   3) restart
+# Text after '#' is ignored, so you can label each line.
+
+378160973   # Global Positions
+375850593   # Extra Equip Slots
+375859599   # Health Info
+458940297   # Food Values - Item Tooltips (Server and Client)

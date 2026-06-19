@@ -21,9 +21,12 @@ services:
       - ./start-container-server.sh:/home/dst/start-container-server.sh:ro
     environment:
       - SHARD_NAME=Caves
-      - HTTP_PROXY=http://172.17.0.1:7890
-      - HTTPS_PROXY=http://172.17.0.1:7890
-      - NO_PROXY=localhost,127.0.0.1
+      # Proxy env intentionally DISABLED. With Clash TUN (transparent proxy) active, these
+      # make steamcmd hang at "Loading Steam API...OK" (it tries to tunnel the Steam
+      # connection through the HTTP proxy). TUN already routes everything transparently.
+      # - HTTP_PROXY=http://172.17.0.1:7890
+      # - HTTPS_PROXY=http://172.17.0.1:7890
+      # - NO_PROXY=localhost,127.0.0.1
     depends_on: 
     - dst_master
 
@@ -46,9 +49,12 @@ services:
       - ./start-container-server.sh:/home/dst/start-container-server.sh:ro
     environment:
       - SHARD_NAME=Master
-      - HTTP_PROXY=http://172.17.0.1:7890
-      - HTTPS_PROXY=http://172.17.0.1:7890
-      - NO_PROXY=localhost,127.0.0.1
+      # Proxy env intentionally DISABLED. With Clash TUN (transparent proxy) active, these
+      # make steamcmd hang at "Loading Steam API...OK" (it tries to tunnel the Steam
+      # connection through the HTTP proxy). TUN already routes everything transparently.
+      # - HTTP_PROXY=http://172.17.0.1:7890
+      # - HTTPS_PROXY=http://172.17.0.1:7890
+      # - NO_PROXY=localhost,127.0.0.1
 
     # These allow to stdin when attaching to the container via `docker attach`
     # Any server commands should be sent to the master shard as it manages its slaves (Caves)
